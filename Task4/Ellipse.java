@@ -78,14 +78,9 @@ public class Ellipse extends Shape {
         );
     }
 
-    // implementing scale method
+    // implementing Scalable interface
     @Override
     public boolean scale(double factor) {
-        if (factor <= 0) {
-            return false;
-        }
-        this.semi_major_axis *= factor;
-        this.semi_minor_axis *= factor;
-        return true;
+        return this.setAxes(factor * this.semi_major_axis, factor * this.semi_minor_axis);
     }
 }

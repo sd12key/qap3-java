@@ -99,12 +99,6 @@ public class Triangle extends Shape {
     // implementing Scalable interface
     @Override
     public boolean scale(double factor) {
-        if (factor <= 0) {
-            return false;
-        }
-        this.side1 *= factor;
-        this.side2 *= factor;
-        this.side3 *= factor;
-        return false;
+        return this.setSides(factor * this.side1, factor * this.side2, factor * this.side3);
     }
 }

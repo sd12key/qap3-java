@@ -45,10 +45,8 @@ public class Circle extends Ellipse {
     }
 
     @Override
+    // sets both axes to the same value of 1st parameter
     public boolean setAxes(double semi_major_axis, double semi_minor_axis) {
-        if (semi_major_axis != semi_minor_axis) {
-            return false;
-        }
         return this.setRadius(semi_major_axis);
     }
 
