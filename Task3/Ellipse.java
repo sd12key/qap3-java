@@ -8,7 +8,7 @@ public class Ellipse extends Shape {
     public Ellipse(String name, double semi_major_axis, double semi_minor_axis) {
         super(name);
         if (!this.is_valid_ellipse(semi_major_axis, semi_minor_axis)) {
-            throw new IllegalArgumentException("Semi-major and semi-minor axes must be positive.");
+            throw new IllegalArgumentException("Semi-major/semi-minor axes must be positive.");
         }
         this.semi_major_axis = semi_major_axis;
         this.semi_minor_axis = semi_minor_axis;
