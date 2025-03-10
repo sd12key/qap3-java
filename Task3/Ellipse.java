@@ -7,8 +7,15 @@ public class Ellipse extends Shape {
     // constructor
     public Ellipse(String name, double semi_major_axis, double semi_minor_axis) {
         super(name);
+        if (!this.is_valid_ellipse(semi_major_axis, semi_minor_axis)) {
+            throw new IllegalArgumentException("Semi-major and semi-minor axes must be positive.");
+        }
         this.semi_major_axis = semi_major_axis;
         this.semi_minor_axis = semi_minor_axis;
+    }
+
+    private boolean is_valid_ellipse(double a, double b) {
+        return (a > 0) && (b > 0);
     }
 
     // getters
@@ -25,17 +32,29 @@ public class Ellipse extends Shape {
     }
 
     // setters
-    public void setSemiMajorAxis(double semi_major_axis) {
+    public boolean setSemiMajorAxis(double semi_major_axis) {
+        if (!this.is_valid_ellipse(semi_major_axis, this.semi_minor_axis)) {
+            return false;
+        }
         this.semi_major_axis = semi_major_axis;
+        return true;
     }
 
-    public void setSemiMinorAxis(double semi_minor_axis) {
+    public boolean setSemiMinorAxis(double semi_minor_axis) {
+        if (!this.is_valid_ellipse(this.semi_major_axis, semi_minor_axis)) {
+            return false;
+        }
         this.semi_minor_axis = semi_minor_axis;
+        return true;
     }
 
-    public void setAxes(double semi_major_axis, double semi_minor_axis) {
+    public boolean setAxes(double semi_major_axis, double semi_minor_axis) {
+        if (!this.is_valid_ellipse(semi_major_axis, semi_minor_axis)) {
+            return false;
+        }
         this.semi_major_axis = semi_major_axis;
         this.semi_minor_axis = semi_minor_axis;
+        return true;
     }
 
     // methods to compute shape perimeter and area

@@ -6,7 +6,15 @@ public class Circle extends Shape {
     // constructor
     public Circle(String name, double radius) {
         super(name);
+        if (!this.is_valid_circle(radius)) {
+            throw new IllegalArgumentException("Radius must be positive.");
+        }
         this.radius = radius;
+    }
+
+    // helper method to check if the radius is positive
+    private boolean is_valid_circle(double radius) {
+        return radius > 0;
     }
 
     // getter
@@ -15,8 +23,12 @@ public class Circle extends Shape {
     }
 
     // setter
-    public void setRadius(double radius) {
+    public boolean setRadius(double radius) {
+        if (!this.is_valid_circle(radius)) {
+            return false;
+        }
         this.radius = radius;
+        return true;
     }
 
     // methods to compute shape perimeter and area
