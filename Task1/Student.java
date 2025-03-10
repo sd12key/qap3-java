@@ -1,12 +1,12 @@
 package Task1;
 
-class Student extends Person {
-    protected String id; 
-    protected double gpa;
+public class Student extends Person {
+    private String id; 
+    private double gpa;
 
     // constructor
     public Student(String name, int age, String gender, String id, double gpa) {
-        super(name, age, gender); // Call the superclass (Person) constructor
+        super(name, age, gender); 
         this.id = id;
         this.gpa = gpa;
     }

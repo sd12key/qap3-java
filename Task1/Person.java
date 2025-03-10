@@ -1,9 +1,9 @@
 package Task1;
 
-class Person {
-    protected String name;
-    protected int age;
-    protected String gender;
+public class Person {
+    private String name;
+    private int age;
+    private String gender;
 
     // constructor
     public Person(String name, int age, String gender) {

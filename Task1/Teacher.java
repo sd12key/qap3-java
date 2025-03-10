@@ -1,10 +1,10 @@
 package Task1;
 
-class Teacher extends Person {
+public class Teacher extends Person {
     private double salary;
     private String subject; 
 
-    public Teacher(String name, int age, String gender, double salary, String subject) {
+    public Teacher(String name, int age, String gender, String subject, double salary) {
         super(name, age, gender);
         this.salary = salary;
         this.subject = subject;
